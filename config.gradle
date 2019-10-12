@@ -1,0 +1,120 @@
+ext {
+
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.1",
+            minSdkVersion    : 19,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    dependVersion = [
+            appcompat_version    : "1.0.2",
+            core_ktx_version     : "1.0.2",
+            anko_version         : "0.10.8",
+
+            rxAndroid            : "2.1.1",
+            rxKotlin             : "2.4.0",
+            rxLifeCycleSdkVersion: "3.0.0",
+            retrofitSdkVersion   : "2.6.1",
+            okhttpSdkVersion     : "4.1.0",
+
+            dagger2              : "2.24",
+
+            glideSdkVersion      : "4.9.0",
+
+            bottom_bar           : "2.3.1",
+            autosize             : "1.1.2",
+            immersionbar         : "3.0.0-beta07",
+            circle_imageview     : "3.0.1",
+            alert                : "1.0.3",
+            multidex             : "1.0.1",
+            bottomNavigationBar  : "2.0.2",
+            banner               : "1.4.10",
+            coverFlow            : "1.0.5",
+            smartRefreshLayout   : "2.0.0-alpha-1",
+            GSYVideoPlayer       : "7.1.0"
+    ]
+
+    supportDeps = [
+            //--------  support  -------
+            appcompat: "androidx.appcompat:appcompat:$dependVersion.appcompat_version",
+            core_ktx : "androidx.core:core-ktx:$dependVersion.core_ktx_version",
+            anko     : "org.jetbrains.anko:anko:$dependVersion.anko_version",
+    ]
+
+    retrofit = [
+            //------ retrofit和RxJava ---------
+            retrofit                : "com.squareup.retrofit2:retrofit:$dependVersion.retrofitSdkVersion",
+            okhttp                  : "com.squareup.okhttp3:okhttp:$dependVersion.okhttpSdkVersion",
+            okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$dependVersion.okhttpSdkVersion",
+            retrofitConverterGson   : "com.squareup.retrofit2:converter-gson:$dependVersion.retrofitSdkVersion",
+            retrofitAdapterRxjava2  : "com.squareup.retrofit2:adapter-rxjava2:$dependVersion.retrofitSdkVersion",
+    ]
+
+    rx = [
+            rxAndroid            : "io.reactivex.rxjava2:rxandroid:$dependVersion.rxAndroid",
+            RxKotlin             : "io.reactivex.rxjava2:rxkotlin:$dependVersion.rxKotlin",
+            rxLifeCycle          : "com.trello.rxlifecycle3:rxlifecycle-kotlin:$dependVersion.rxLifeCycleSdkVersion",
+            rxLifeCycleComponents: "com.trello.rxlifecycle3:rxlifecycle-components:$dependVersion.rxLifeCycleSdkVersion",
+            rxLifeCycleAndroid   : "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:$dependVersion.rxLifeCycleSdkVersion"
+    ]
+
+
+    dagger2 = "com.google.dagger:dagger:$dependVersion.dagger2"
+    dagger2Compiler = "com.google.dagger:dagger-compiler:$dependVersion.dagger2"
+
+
+    glide = "com.github.bumptech.glide:glide:$dependVersion.glideSdkVersion"
+    glideCompiler = "com.github.bumptech.glide:compiler:$dependVersion.glideSdkVersion"
+
+    multidex = "com.android.support:multidex:$dependVersion.multidex"
+    //适配
+    autoSize = "me.jessyan:autosize:$dependVersion.autosize"
+
+    //沉浸式
+    immersionBar = "com.gyf.immersionbar:immersionbar:$dependVersion.immersionbar"
+    immersionbarFragment = "com.gyf.immersionbar:immersionbar-components:$dependVersion.immersionbar"
+    immersionbarKotlin = "com.gyf.immersionbar:immersionbar-ktx:$dependVersion.immersionbar"
+
+
+    //底部导航
+    bottomBar = "com.roughike:bottom-bar:$dependVersion.bottom_bar"
+
+    circleimageview = "de.hdodenhof:circleimageview:$dependVersion.circle_imageview"
+
+    alert = "com.bigkoo:alertview:$dependVersion.alert"
+
+
+    bottom_navigation_bar = "com.ashokvarma.android:bottom-navigation-bar:$dependVersion.bottomNavigationBar"
+
+    banner = "com.youth.banner:banner:$dependVersion.banner"
+
+
+    cover_flow = "com.github.crosswall:Android-Coverflow:release-v$dependVersion.coverFlow"
+
+//    multi_state_view_version = "com.github.Kennyc1012:MultiStateView:$dependVersion.multi_state_view_version"
+
+    smart_refresh_layout = "com.scwang.smart:refresh-layout-kernel:$dependVersion.smartRefreshLayout"
+    smart_refresh_layout_header = "com.scwang.smart:refresh-header-material:$dependVersion.smartRefreshLayout"
+
+    // 视屏播放器
+    videoPlayer = "com.shuyu:GSYVideoPlayer:$dependVersion.GSYVideoPlayer"
+
+    //基础支持库
+    supportLibs = supportDeps.values()
+
+    networkLibs = retrofit.values()
+    rxLibs = rx.values()
+
+    //其他第三方库合集
+    otherLibs = [dagger2, glide, bottomBar, autoSize, immersionBar,
+                 immersionbarFragment, immersionbarKotlin, circleimageview, alert, multidex,
+                 bottom_navigation_bar, banner, cover_flow,
+                 smart_refresh_layout, smart_refresh_layout_header,videoPlayer]
+
+    // APT合集
+    annotationProcessorLibs = [glideCompiler, dagger2Compiler]
+
+}
